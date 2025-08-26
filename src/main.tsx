@@ -7,12 +7,36 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { Header } from '@/components/Header'
 import './index.css'
 
-const App = lazy(() => import('./App').then(m => ({ default: m.App })))
-const SetupPage = lazy(() => import('./pages/ExamplePage').then(m => ({ default: m.default })))
+const App = lazy(() => import('./App').then((m) => ({ default: m.App })))
+const SetupPage = lazy(() => import('./pages/ExamplePage').then((m) => ({ default: m.default })))
+
+// Create a layout component that includes the header
+function Layout({ children }: { children: React.ReactNode }) {
+	return (
+		<>
+			<Header />
+			<Suspense fallback={<div className="container py-8">Loading…</div>}>{children}</Suspense>
+		</>
+	)
+}
 
 const router = createBrowserRouter([
-	{ path: '/', element: <App /> },
-	{ path: '/setup', element: <SetupPage /> },
+	{
+		path: '/',
+		element: (
+			<Layout>
+				<App />
+			</Layout>
+		),
+	},
+	{
+		path: '/setup',
+		element: (
+			<Layout>
+				<SetupPage />
+			</Layout>
+		),
+	},
 ])
 
 const queryClient = new QueryClient()
@@ -21,10 +45,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<ErrorBoundary>
-				<Header />
-				<Suspense fallback={<div className="container py-8">Loading…</div>}>
-					<RouterProvider router={router} />
-				</Suspense>
+				<RouterProvider router={router} />
 			</ErrorBoundary>
 		</QueryClientProvider>
 	</React.StrictMode>,
