@@ -1,0 +1,36 @@
+node_modules
+
+dist/
+.vite/
+.vitest/
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Lint/Tooling caches
+.eslintcache
+
+# Misc
+*.local
