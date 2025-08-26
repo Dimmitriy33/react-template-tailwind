@@ -11,16 +11,24 @@ export function App(): JSX.Element {
 					<Card>
 						<CardHeader>
 							<h1 className="text-2xl font-bold">React + Vite + Tailwind v4 Template</h1>
-							<p className="mt-1 text-sm text-neutral-600">Router, React Query, ErrorBoundary, and a tiny UI kit.</p>
+							<p className="mt-1 text-sm text-neutral-600">
+								Router, React Query, ErrorBoundary, and a tiny UI kit.
+							</p>
 						</CardHeader>
 						<CardContent>
 							<div className="space-y-6">
-								<p className="text-neutral-700">Get started by visiting the setup page or try the sample button styles below.</p>
+								<p className="text-neutral-700">
+									Get started by visiting the setup page or try the sample button styles below.
+								</p>
 								<div className="flex items-center gap-3">
-									<Link to="/setup"><Button>Open setup</Button></Link>
+									<Link to="/setup">
+										<Button>Open setup</Button>
+									</Link>
 									<Button variant="secondary">Secondary</Button>
 								</div>
-								<div className="text-xs text-neutral-500">Components used on this page: <code>Card</code>, <code>Button</code>.</div>
+								<div className="text-xs text-neutral-500 ">
+									Components used on this page: <code>Card</code>, <code>Button</code>.
+								</div>
 							</div>
 						</CardContent>
 					</Card>
