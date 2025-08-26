@@ -26,7 +26,7 @@ export function App(): JSX.Element {
 									</Link>
 									<Button variant="secondary">Secondary</Button>
 								</div>
-								<div className="text-xs text-neutral-500 ">
+								<div className="text-xs text-neutral-500">
 									Components used on this page: <code>Card</code>, <code>Button</code>.
 								</div>
 							</div>
